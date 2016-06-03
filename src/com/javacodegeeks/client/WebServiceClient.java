@@ -1,6 +1,6 @@
-package com.javacodegeeks.enterprise.ws.client;
+package com.javacodegeeks.client;
 
-import com.javacodegeeks.enterprise.ws.WebServiceInterface;
+import com.javacodegeeks.ws.server.WebServiceInterface;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;

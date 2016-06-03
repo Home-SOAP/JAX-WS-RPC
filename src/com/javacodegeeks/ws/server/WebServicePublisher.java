@@ -1,4 +1,4 @@
-package com.javacodegeeks.enterprise.ws;
+package com.javacodegeeks.ws.server;
 
 import javax.xml.ws.Endpoint;
 
