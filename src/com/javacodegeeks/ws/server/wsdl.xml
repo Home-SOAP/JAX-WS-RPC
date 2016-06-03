@@ -44,7 +44,7 @@ with it. The document tree is shown below.
 	</binding>
 	<service name="WebServiceImplService">
 		<port name="WebServiceImplPort" binding="tns:WebServiceImplPortBinding">
-			<soap:address location="http://localhost:8888/webserive/helloworld" />
+			<soap:address location="http://localhost:8888/ws/helloworld" />
 		</port>
 	</service>
 </definitions>

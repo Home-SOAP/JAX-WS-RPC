@@ -9,7 +9,7 @@ import java.net.URL;
 public class WebServiceClient{
  
 	public static void main(String[] args) throws Exception {
-	    URL wsdlUrl = new URL("http://localhost:8888/webserive/helloworld?wsdl");
+	    URL wsdlUrl = new URL("http://localhost:8888/ws/helloworld?wsdl");
         
 	    //qualifier name ...
         QName qname = new QName("http://server.ws.javacodegeeks.com/", "WebServiceImplService");
