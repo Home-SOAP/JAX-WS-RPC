@@ -1,13 +1,18 @@
 
-1. 'Endpoint' (WebServicePublisher) - эта утилита которая стартует наш веб-сервис, по указаному url-адрессу (http://localhost:8888/webserive/helloworld)
+1. нужно создать интерфейс веб-сервиса (WebServiceInterface) аннотацией @WebService
+2. потом имплементировать этот интерфейс веб-сервиса (WebServiceImpl):
+   > регистрируем интерфейс нашего веб-сервиса  @WebService(endpointInterface="...")
+     - в классе (WebServiceImpl) возле аннотации @WebService нужно указать путь где лежит интерфейс 'endpointInterface="com.javacode.ws.server.WebServiceInterface"'...серверная сторона
+     - в интерфейсе метода клиента (WebServiceInterface) возле аннотации @Action тоже фиксируем путь к интерфейсу метода сервера...клиентская сторона
+     - в классе имплементации метода (WebServiceImplService) возле аннотации @WebServiceClient и @WebServiceClient где 'targetNamespace' + при создании экземпляра класса в конструкторе 'QName' тоже фиксируем путь к интерфейсу...клиентская сторона
+3. 'Endpoint' (WebServicePublisher) - эта утилита которая стартует наш веб-сервис, по указаному url-адрессу (http://localhost:8888/webserive/helloworld)
    > этот url-адресс должен быть зарегистрирован:
      - в самой утилите для запуска веб-сервиса 'Endpoint' (WebServicePublisher)...серверная сторона
      - в описании 'WSDL-документе' (wsdl.xml)...серверная сторона
      - в классе-имплементации веб-сервиса (WebServiceImplService)...клиентская сторона
      = если зайти в веб-браузере по этому 'url-адрессу' + добавить '?wsdl' (http://localhost:8888/ws/helloworld?wsdl) тогда в результате будет доступен сам 'WSDL-документ'
        (собственно можно использовать класс-клиен 'URL', аналог веб-браузеру, чтобы получить доступ через HTTP-протокол и просмотреть/проверить 'WSDL-документ'...)
-2. класс-имплементация веб-сервиса (WebServiceImpl):
-   > регистрируем интерфейс нашего веб-сервиса  @WebService(endpointInterface="...")
-     - в классе (WebServiceImpl) возле аннотации @WebService нужно указать путь где лежит интерфейс 'endpointInterface="com.javacode.ws.server.WebServiceInterface"'...серверная сторона
-     - в интерфейсе метода клиента (WebServiceInterface) возле аннотации @Action тоже фиксируем путь к интерфейсу метода сервера...клиентская сторона
-     - в классе имплементации метода (WebServiceImplService) возле аннотации @WebServiceClient и @WebServiceClient где 'targetNamespace' + при создании экземпляра класса в конструкторе 'QName' тоже фиксируем путь к интерфейсу...клиентская сторона
+4. Вызов веб-сервиса через клиент:
+   - через класс 'URL' (утилиту) клиент читаем 'WSDL-документ'...
+   - ???
+   - переменная типа интерфейса (WebServiceInterface), на стороне клиента, инициализируется данными полученными из веб-сервиса И через интерфейсный метод веб-сервиса 'getHelloWorldAsString' получаем информацию...
