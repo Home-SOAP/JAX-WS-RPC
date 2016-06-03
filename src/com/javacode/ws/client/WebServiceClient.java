@@ -12,7 +12,7 @@ public class WebServiceClient{
 	    URL wsdlUrl = new URL("http://localhost:8888/ws/helloworld?wsdl");
         
 	    //qualifier name ...
-        QName qname = new QName("http://server.ws.javacodegeeks.com/", "WebServiceImplService");
+        QName qname = new QName("http://server.ws.javacode.com/", "WebServiceImplService");
  
         Service service = Service.create(wsdlUrl, qname);
  
