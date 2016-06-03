@@ -1,4 +1,4 @@
-package com.javacodegeeks.client;
+package com.javacodegeeks.ws.client;
 
 import com.javacodegeeks.ws.server.WebServiceInterface;
 
