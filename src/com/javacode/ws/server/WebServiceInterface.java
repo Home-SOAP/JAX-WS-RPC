@@ -1,4 +1,4 @@
-package com.javacodegeeks.ws.server;
+package com.javacode.ws.server;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
